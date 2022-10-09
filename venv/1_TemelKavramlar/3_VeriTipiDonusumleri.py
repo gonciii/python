@@ -37,9 +37,10 @@
 
 # kullanıcının adını ve soyadını alarak ad.soyad@bilgeadamakademi.com şeklinde bir mail adresi oluşturan ve gösteren uygulamayı yazınız.
 
-ad=str(input("Adınızı giriniz:"))
-soyadı=str(input("Soyadınızı giriniz:"))
-mail_adresi=f"{ad}.{soyadı}@bilgeadamakademicom".lower().replace('ç',"c")
-print(mail_adresi)
+# ad=str(input("Adınızı giriniz:"))
+# soyadı=str(input("Soyadınızı giriniz:"))
+# mail_adresi=f"{ad}.{soyadı}@bilgeadamakademicom".lower().replace('ç',"c")
+# print(mail_adresi)
+
 
 
