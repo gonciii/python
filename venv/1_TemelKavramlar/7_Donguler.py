@@ -128,16 +128,139 @@ while kosul:
 
 # kullanıcı hayır diyene kadar rastgele sayı üreterek (1-100) ekranda gösteren uygulamayı yazınız.
 
-# 1.yöntem:
-import random as rnd
-while True:
-    print(f"Üretilen:{rnd.randint(1,100)}")
-    input("Çıkmak için hayır yazınız.")
-    if girilen =="hayır":
-        break
+# # 1.yöntem:
+# import random as rnd
+# while True:
+#     print(f"Üretilen:{rnd.randint(1,100)}")
+#     input("Çıkmak için hayır yazınız.")
+#     if girilen =="hayır":
+#         break
+#
+# # diğer yöntem
+# devam_mi="e"
+# while devam_mi=="e":
+#     print(f"Üretilen :{rnd.randint(1,100)}")
+#     devam_mi=input("devam etmek için e yazınız.")
 
-# diğer yöntem
-devam_mi="e"
-while devam_mi=="e":
-    print(f"Üretilen :{rnd.randint(1,100)}")
-    devam_mi=input("devam etmek için e yazınız.")
+# kullanıcıdan bir sayı alınız,girilen değer 0-10 aralığında ise doğru giriş değilse doğru giriş yapana kadar karşı taraftan bilgi istemeye devam eden programı ekrana yazdırınız.
+#  benim yaptığım:
+# kullanici=int(input("Bir sayı sayı giriniz:"))
+# sayac=0
+# while sayac < 10 :
+#     print(f"girilen sayı 0-10 arasında : Doğru giriş!")
+#     if (kullanici<0) and (kullanici> 10) :
+#         print(f"Giriş bilgileriniz doğru değil.")
+#     else:
+#         print("Tekrar bir sayı giriniz:")
+
+
+# # 2.yöntem:
+# while True:
+#     sayi=int(input("Bir sayı giriniz:"))
+#     if 0 <= sayi <=10:
+#         print("doğru giriş yapıldı.")
+#         break
+#     else:
+#         print("yanlış giriş yapıldı.1-10 arasında bir sayı giriniz.")
+#
+# # 3.yöntem:
+# sayi=-1
+# while not 0 <= sayi <= 10 :
+#     sayi=int(input("1-10 arasında bir sayı giriniz."))
+# print("doğru giriş yapıldı.")
+
+# rastgele 4 haneli bir doğrulama kodu belirleyiniz. ve ekranda bu değer gösteriniz.Kullanıcıdan bu kodu doğru bir şekilde girmesini isteyiniz ve doğru giriş yapılana kadar uyarı veriniz.
+# 1000-999
+#
+# import random as rnd
+# kod=rnd.randint(1000,9999)
+# print(f"üretilen kod:{kod}")
+# giris_dogru_mu=False
+# while not giris_dogru_mu:
+#     girilen_kod=int(input("Kodu yazınız:"))
+#     if girilen_kod != kod:
+#         print("Yanlış giriş yapıldı,yeniden deneyiniz.")
+#     else:
+#         print("giriş başarılı.")
+#         girilen_kod=True    ## yerine Break de yazılabilir.
+# #
+# diğer yöntem:
+# geliştirme: her yanlış girildiğinde yeniden kod üretilerek gösterilsin.
+# import random as rnd
+# kod=rnd.randint(1000,9999)
+# print(f"üretilen kod:{kod}")
+# girilen_kod=int(input("Kodu giriniz:"))
+# while kod !=girilen_kod:
+#     kod = rnd.randint(1000, 9999)
+#     print(f"üretilen kod:{kod}")
+#     girilen_kod=int(input("Kodu giriniz"))
+# print("giriş başarılı.")
+
+# rastgele 4 haneli bir doğrulama kodu belirleyiniz. ve ekranda bu değer gösteriniz.Kullanıcıdan bu kodu doğru bir şekilde girmesini isteyiniz ve 3 kez yanlış giriş yapılırsa hakkınız tükendi uyarısını veriniz
+# import random as rnd
+# kod=rnd.randint(1000,9999)
+# print(kod)
+# sayac=0
+# girilen=int(input("Kodu giriniz:"))
+# while kod !=girilen:
+#     sayac+=1
+#     if sayac == 3:
+#         print("3 giriş hakkınız tükendi")
+#         break
+#     else:
+#         girilen=int(input("Kodu giriniz:"))
+# if kod ==girilen :
+#     print("giriş başarılı.")
+
+# vize final notları girilirken 0-100 aralığında girilmesini isteyiniz.eğer vize doğru girildiyse final notunu isteyiniz.her bir notu girerken 0-100 aralığında alana kadar notları yeniden isteyiniz.
+# her ikisi de doğru girildiyse ortalama hesaplayıp gösteiniz.
+
+#  bu benim yaptığım :
+vize=float(input("0-100 aralığında ki vize notunu giriniz:"))
+final=float(input("0-100 aralığındaki final notunu giriniz:"))
+ortalama=(vize*0.4+final*0.6)
+sayac=0
+while vize < 100:
+    print("Vize notunu tekrar giriniz.")
+    if vize>=0 and vize <=100:
+        print("vize notunuzu doğru girdiniz")
+        while final< 100:
+            print("final notunu tekrar giriniz")
+            if final>=0 and final <=100:
+                print("final notunuzu doğru girdiniz.")
+            else:
+                print(final)
+                break
+    else:
+        print(vize)
+
+print(f"vize:{vize},final:{final},ortalama:{ortalama}")
+
+
+# hocanın çözümü:
+vize=-1
+while not 0 <=vize <=100:
+    vize=float(input("vize giriniz:"))
+
+final=-1
+while not 0<= final <=100:
+    finaş=float(input("final giriniz:"))
+
+ort=vize*0.4+final*0.6
+print(ort)
+
+
+# Ödev:
+# sayı tahmini uygulaması
+# 1-10 arasında rastgele bir sayı üretilir ekranda gösterilmez.kullanıcıdan o sayıyı tahmin etmesi istenir.3 kez tahmin etme hakkı olur.Hakları bittiğinde game over!yanlış girdikçe yeni tahminler( kalan hakkı kadar) yapabilir. sayıyı bildiğinde ise tebrikler uyarası verilir.
+
+
+
+
+
+
+
+
+
+
+

@@ -66,14 +66,14 @@ Debug yaparken:
 
 
 ##Hata fırlatma:  raise exception ("mesaj")
-try:
-    vize = float(input("vize notunu giriniz:"))
-    if not (vize >=0 or vize <=100):
-        raise Exception("0 ile 100 aralığında değer girilebilir.")
-    vize_agırlık=vize*0.4
-    print(vize_agırlık)
-except ValueError as ve:
-    print("Lütfen sayısal bir değer giriniz.")
-except Exception as ex:
-    print(ex)
+# try:
+#     vize = float(input("vize notunu giriniz:"))
+#     if not (vize >=0 or vize <=100):
+#         raise Exception("0 ile 100 aralığında değer girilebilir.")
+#     vize_agırlık=vize*0.4
+#     print(vize_agırlık)
+# except ValueError as ve:
+#     print("Lütfen sayısal bir değer giriniz.")
+# except Exception as ex:
+#     print(ex)
 
