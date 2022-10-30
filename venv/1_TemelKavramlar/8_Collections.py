@@ -135,25 +135,128 @@
 # for list in range(1,(sayi)+1):
 #     print(list)
 
-# hocanın yaptığı:
-sayi=int(input("Bir sayı giriniz:"))
-liste=[]
-for i in range(1,sayi+1):
-    liste.append(i)
-    liste.insert(i-1,i)
-print(liste) #[1, 2, 3, 4, 5]
+# # hocanın yaptığı:
+# sayi=int(input("Bir sayı giriniz:"))
+# liste=[]
+# for i in range(1,sayi+1):
+#     liste.append(i)
+#     liste.insert(i-1,i)
+# print(liste) #[1, 2, 3, 4, 5]
+#
+# for i in liste:
+#     print(i)
+# # ---------------------------------------------------------
+# # 2.yöntem
+# sayi=int(input("Bir sayı giriniz:"))
+# liste=[]
+# liste.extend(range(1,sayi+1))
+# print(liste)
 
-for i in liste:
-    print(i)
-# ---------------------------------------------------------
-# 2.yöntem
-sayi=int(input("Bir sayı giriniz:"))
-liste=[]
-liste.extend(range(1,sayi+1))
-print(liste)
+# # Örnek:İnputtan 2 sayı alınız,ilk girilen sayı
+# # küçük ise artan sırayla;büyük ise azalan sırayla bir liste oluşturunuz.
+# sayi1=int(input("1.Sayıyı giriniz:"))
+# sayi2=int(input("2.Sayıyı giriniz:"))
+# artis_miktari=1
+# if sayi1>sayi2:
+#     artis_miktari=-1
+# # alternatif kısa yöntemi artis_miktari=1 if sayi1>sayi2 else -1
+# liste=[]
+# for i in range(sayi1,sayi2+artis_miktari,artis_miktari):
+#     liste.append(i)
+# print(liste)
 
-# Örnek:İnputtan 2 sayı alınız,ilk girilen sayı
-# küçük ise artan sırayla;büyük ise azalan sırayla bir liste oluşturunuz.
+# # Diğer bir yol:
+# sayi1 = int(input("bir sayı giriniz: "))
+# sayi2 = int(input("ikinci bir sayı giriniz: "))
+# liste= []
+# if sayi1 < sayi2:
+#     liste.extend(range(sayi1, sayi2+ 1))
+# else:
+#     liste.extend(range(sayi1, sayi2- 1, - 1))
+# print(liste)
+
+# Örnek: A'dan Z'ye kadar olan harfleri döngü ile listeye ekleyiniz.
+
+# # ------NOTE:
+# ord("a") #içine bir string alır.içindeki aparametre olarak bir sembol alır.
+# ascii_karsiligi=ord("a")  #a->97 b>-98
+# harf_karsiligi=chr((97))
+# print(ascii_karsiligi,harf_karsiligi)
+
+# ---------------------------------
+
+# kucuk_harfler_listesi=[]
+# for i in range(ord("a"),ord("z")+1):
+#     kucuk_harfler_listesi.append(chr(i))
+# print(kucuk_harfler_listesi)
+#
+# buyuk_harfler_listesi=[]
+# for i in range(ord("A"),ord("Z")+1):
+#     buyuk_harfler_listesi.append(chr(i))
+# print(buyuk_harfler_listesi)
+#
+# rakam=[]
+# for i in range(ord("0"),ord("9")+1):
+#     rakam.append(chr(i))
+# print(rakam)
+
+# ÖRNEK:SAYILAR İSİMLİ BİR LİSTEYE 10 TANE RASTGELE SAYI ÜRETEREK EKLEYİNİZ.ÜRETİLECEK SAYILAR (1-100)
+# ARASINDA OLSUN.
+
+# sayilar=[]
+# import random as rnd
+# for i in range(0,10):
+#     rsayi=rnd.randint(1,100)
+#     sayilar.append(rnd.randint(1,100))
+# print(sayilar)
+
+# # başka bir metot:
+# import random as rnd
+# rastgele_sayilar= rnd.sample(range(1,101),10)
+# print(rastgele_sayilar)
+
+# geliştirme:eğer rastgele üretilen bir sayı daha önce varsa eklemeyelim
+# sayilar=[]
+# import random as rnd
+# for i in range(10):
+#      rsayi=rnd.randint(1,100)
+#      if sayilar.count(rsayi)==0:
+#          sayilar.append(rsayi)
+#
+# print(sayilar) -----------------bu for ile olamıyor .
+
+# çözüm:
+index=0
+while index < 10:
+    rsayi = rnd.randint(1, 100)
+    if sayilar.count(rsayi) == 0:
+        sayilar.append(rsayi)
+        index+=1
+
+# ------------------------------------------
+dongu_kac_kez_dondu=0
+while len(sayilar)<10:
+    dongu_kac_kez_dondu+=1
+    rsayi = rnd.randint(1, 100)
+    if sayilar.count(rsayi) == 0:
+        sayilar.append(rsayi)
+print(sayilar)
+print(dongu_kac_kez_dondu)
+
+# ----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
