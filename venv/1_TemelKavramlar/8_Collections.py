@@ -226,24 +226,97 @@
 # print(sayilar) -----------------bu for ile olamıyor .
 
 # çözüm:
-index=0
-while index < 10:
-    rsayi = rnd.randint(1, 100)
-    if sayilar.count(rsayi) == 0:
-        sayilar.append(rsayi)
-        index+=1
-
-# ------------------------------------------
-dongu_kac_kez_dondu=0
-while len(sayilar)<10:
-    dongu_kac_kez_dondu+=1
-    rsayi = rnd.randint(1, 100)
-    if sayilar.count(rsayi) == 0:
-        sayilar.append(rsayi)
-print(sayilar)
-print(dongu_kac_kez_dondu)
+# index=0
+# while index < 10:
+#     rsayi = rnd.randint(1, 100)
+#     if sayilar.count(rsayi) == 0:
+#         sayilar.append(rsayi)
+#         index+=1
+#
+# # ------------------------------------------
+# dongu_kac_kez_dondu=0
+# while len(sayilar)<10:
+#     dongu_kac_kez_dondu+=1
+#     rsayi = rnd.randint(1, 100)
+#     if sayilar.count(rsayi) == 0:
+#         sayilar.append(rsayi)
+# print(sayilar)
+# print(dongu_kac_kez_dondu)
 
 # ----------------------------------------------
+
+# Müşteriden kaç kolon oynamak istediğini alalım.Sonrasında
+# 1 kolan için 1-49(49) dahil rastgele 6 tane sayı üretilsin ve bir listeye eklesin  ve kçükten büyüğe doğru sıralansın.
+# Her kolan için aynı işlemler yapılsın.
+
+# ÇÖZÜM:
+
+# import random as rnd #sayfanın en üstüne eklenmesi önerilir.
+# ana_liste=[]
+# kolon_sayi=int(input("Kolon sayısı giriniz:"))
+#
+# for i in range(kolon_sayi):
+#      liste = []
+#      while len(liste) < 6:
+#            uretilen = rnd.randint(1, 49)
+#            if liste.count(uretilen)==0:
+#              liste.append(uretilen)
+#      liste.sort()      #sıralıyor.
+#      ana_liste.append(liste)
+#      #liste=[] #clear kullanamadık çünkü clear listede değişiklik yaptığı için
+#
+# print(ana_liste)
+
+# -------------------------------------------
+# ÖRNEK:
+# kullanıcı hayır(h) diyene kadar veri almaya ve girilen değeri bir listeye eklyen uyg.yazınız.
+# Listeye hem index no hemde veri ile birlikte alt alta yazdırınız.
+# 1.ankara
+# 2.izmir
+# 3.izmir
+
+# iller=[]
+# while True:
+#     il=input("İl giriniz:")
+#     iller.append(il)
+#     girilen=input("Devam etmek istiyor musunuz? E/H yazınız.")
+#     if girilen.lower()=="h":
+#         break
+
+# for i in range(len(iller)):
+#     print(f"{i+1}.{iller[i]}")
+# -------------------------------------------------------------
+
+# for il in iller:
+#     print(f"{iller.index(il)+1}.{il}")
+# --------------------------------------------------------------
+
+# while True:
+#     girilen=input("İL giriniz:")
+#     if girilen.lower()=="h":
+#         break
+#     iller.append(girilen) --------->başka bir yöntem !!
+
+
+# ÖDEV:
+# password generator:
+# kaç karakterli bir şifre istiyorsunuz ? 6
+# büyük harf istiyor musunuz ? e  [A B C D E ...Z]
+# küçük harf istiyor musunuz ? e  [a b c d ...z]
+# rakam istiyor musunuz ? e [0 1,2....9]
+# sembol istiyor musunuz ? h
+# Ascii table
+# t 3 _ _ _ _ _
+
+
+
+
+
+
+
+
+
+
 
 
 

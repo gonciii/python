@@ -215,45 +215,108 @@ while kosul:
 # vize final notları girilirken 0-100 aralığında girilmesini isteyiniz.eğer vize doğru girildiyse final notunu isteyiniz.her bir notu girerken 0-100 aralığında alana kadar notları yeniden isteyiniz.
 # her ikisi de doğru girildiyse ortalama hesaplayıp gösteiniz.
 
-#  bu benim yaptığım :
-vize=float(input("0-100 aralığında ki vize notunu giriniz:"))
-final=float(input("0-100 aralığındaki final notunu giriniz:"))
-ortalama=(vize*0.4+final*0.6)
-sayac=0
-while vize < 100:
-    print("Vize notunu tekrar giriniz.")
-    if vize>=0 and vize <=100:
-        print("vize notunuzu doğru girdiniz")
-        while final< 100:
-            print("final notunu tekrar giriniz")
-            if final>=0 and final <=100:
-                print("final notunuzu doğru girdiniz.")
-            else:
-                print(final)
-                break
-    else:
-        print(vize)
+# #  bu benim yaptığım :
+# vize=float(input("0-100 aralığında ki vize notunu giriniz:"))
+# final=float(input("0-100 aralığındaki final notunu giriniz:"))
+# ortalama=(vize*0.4+final*0.6)
+# sayac=0
+# while vize < 100:
+#     print("Vize notunu tekrar giriniz.")
+#     if vize>=0 and vize <=100:
+#         print("vize notunuzu doğru girdiniz")
+#         while final< 100:
+#             print("final notunu tekrar giriniz")
+#             if final>=0 and final <=100:
+#                 print("final notunuzu doğru girdiniz.")
+#             else:
+#                 print(final)
+#                 break
+#     else:
+#         print(vize)
+#
+# print(f"vize:{vize},final:{final},ortalama:{ortalama}")
 
-print(f"vize:{vize},final:{final},ortalama:{ortalama}")
 
-
-# hocanın çözümü:
-vize=-1
-while not 0 <=vize <=100:
-    vize=float(input("vize giriniz:"))
-
-final=-1
-while not 0<= final <=100:
-    finaş=float(input("final giriniz:"))
-
-ort=vize*0.4+final*0.6
-print(ort)
+# # hocanın çözümü:
+# vize=-1
+# while not 0 <=vize <=100:
+#     vize=float(input("vize giriniz:"))
+#
+# final=-1
+# while not 0<= final <=100:
+#     finaş=float(input("final giriniz:"))
+#
+# ort=vize*0.4+final*0.6
+# print(ort)
 
 
 # Ödev:
 # sayı tahmini uygulaması
-# 1-10 arasında rastgele bir sayı üretilir ekranda gösterilmez.kullanıcıdan o sayıyı tahmin etmesi istenir.3 kez tahmin etme hakkı olur.Hakları bittiğinde game over!yanlış girdikçe yeni tahminler( kalan hakkı kadar) yapabilir. sayıyı bildiğinde ise tebrikler uyarası verilir.
+# 1-10 arasında rastgele bir sayı üretilir ekranda gösterilmez.kullanıcıdan o sayıyı tahmin etmesi istenir
+# .3 kez tahmin etme hakkı olur.Hakları bittiğinde game over!yanlış girdikçe yeni tahminler( kalan hakkı kadar) yapabilir.
+# sayıyı bildiğinde ise tebrikler uyarası verilir.
 
+import random as rnd
+rasgele_sayi=rnd.randint(1,10)
+tahmin_sayi = 0
+while True:
+    sayi = int(input("Lütfen 1-10 arasında bir rasgele sayı giriniz:"))
+    tahmin_sayi+=1
+    if  tahmin_sayi==3:
+        print("Game over")
+    elif sayi==rasgele_sayi:
+        print("Tebrikler")
+        break
+    else:
+        print("Lütfen tekrar giriniz:")
+
+# Hocanın çözümü:
+import random as rnd
+rastgele_uretilen_sayi=rnd.randint(1,10)
+print(rastgele_uretilen_sayi)
+for i in range (3):
+     kullanicinin_tahmini=int(input("Tahmini giriniz:"))
+     if kullanicinin_tahmini==rastgele_uretilen_sayi:
+        print("bildiniz")
+        break
+     else:
+        print("Yanlış tahmin ettiniz.")
+
+# Alternatif çözümü:
+kalan_hak=3
+while kalan_hak >0 :
+    kalan_hak-=1
+    kullanicinin_tahmini=int(input("Tahmini giriniz:"))
+    if kullanicinin_tahmini==rastgele_uretilen_sayi:
+        print("bildiniz")
+        break
+    else:
+        print("Yanlış tahmin ettiniz.")
+    if kalan_hak==0:
+        print("game over")
+
+# --------------------------------------------
+import random as rnd
+
+rastgele_uretilen_sayi = rnd.randint(1, 10)
+kalan_hak = 3
+girilen = "e"
+while girilen != "h":
+    kalan_hak -= 1 # 3 2   2 1   1 0
+    kullanicinin_tahmini = int(input("Tahmini giriniz:"))
+    if kullanicinin_tahmini == rastgele_uretilen_sayi:
+        print("bildiniz")
+        break
+    else:
+        if kullanicinin_tahmini > rastgele_uretilen_sayi:
+             print("Tahmini düşürün!")
+        else:
+            print("Tahmini büyütün!")
+    if kalan_hak == 0:
+        print("game over!")
+        girilen = input("Yeni bir oyun oynamak istiyor musunuz? e/h")
+        rastgele_uretilen_sayi = rnd.randint(1, 10)
+        kalan_hak = 3
 
 
 
