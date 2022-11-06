@@ -307,16 +307,248 @@
 # sembol istiyor musunuz ? h
 # Ascii table
 # t 3 _ _ _ _ _
+#
+# karakter_sayisi=int(input("Kaç karakterli şifre istiyorsunuz,lütfen giriniz :"))
+# buyuk_harf_olacak_mi=input("Büyük  olacak mı ?: e/h")
+# kucuk_harf_olacak_mi=input("Küçük olacak mı ?: e/h")
+# rakam_harf_olacak_mi=input("Rakam  olacak mı ?: e/h")
+# sembol_harf_olacak_mi=input("Sembol  olacak mı ?: e/h")
+#
+# buyuk_harfler=[]
+# kucuk_harfler=[]
+# rakamlar=list(range(0,10))
+# semboller=[]
+# # ord("a")->97  chr(97)-->"a"
+# for i in range(ord("A"),ord("Z")+1):
+#     buyuk_harfler.append(chr(i))
+#
+# for i in range(ord("a"),ord("z")+1):
+#     kucuk_harfler.append(chr(i))
+#
+# for i in range(ord("!"),ord("/")+1):
+#     semboller.append(chr(i))
+#
+# import random as rnd #döngü içinde kullanma !!
+# #password =[]
+# password=""
+# while len(password) <karakter_sayisi:
+#     uretilen=rnd.randint(0,3)
+#     match uretilen:
+#         case 0: #büyük harfler
+#             if buyuk_harf_olacak_mi=="e":
+#                 password += buyuk_harfler[rnd.randint(0,len(buyuk_harfler)-1)]
+#         case 1: #küçük harfler
+#             if  kucuk_harf_olacak_mi=="e":
+#                 password += kucuk_harfler[rnd.randint(0,len(kucuk_harfler)-1)]
+#         case 2: # rakamlar
+#             if  rakam_harf_olacak_mi=="e":
+#                 password += str(rakamlar[rnd.randint(0,len(rakamlar)-1)])
+#         case 3: #semboller
+#             if  sembol_harf_olacak_mi=="e":
+#                 password += semboller[rnd.randint(0,len(semboller)-1)]
+# print(password)
+
+# 2-) TUPLE
+# collectiondur.
+# listten farklı olarak değeri sonradan değiştirilemez.
+# () şeklinde tanımlanır.
+# slicing yapılabilir.
+# index mantığı vardır.
+# t1=()  #boş tuple.
+# print(type(t1))  #<class 'tuple'>
+#
+# t2=(1,1,1,2,3,4,5,6)
+# print(t2)
+
+# VERİ ALMAK İSTEDİĞİMİZ ZAMAN:
+# print(t2[3])  #indexler 0 dan başlar.
+#t2[3]=10  #TypeError: 'tuple' object does not support item assignment
+# tuppların değerini sonradan değiştiremeyiz.
+# TUPLE'IN 2 tane metodu vardır:
+# count ve index
+# print(t2.count(1))  #3
+# print(t2.index(4))  #5
+#
+# del t2[2] #TypeError: 'tuple' object doesn't support item deletion
+# # değeri silmek istediğimiz için ve tuple'lar değiştirilemeyeceği için hata verir.
+# del t2   #tanımlanan bir değişkeni tamamen sildiğimiz için bu hata vermez.
+# print(t2)  #yukarıdaki satırda bu değişkeni ramden kaldırdığı için bu değere erişilemez.
+#
+# # slicing kullanımı:
+# sayilar=(11,12,13,14,15,16)
+# print(sayilar[2:4]) #sondaki index dahil olmuyor. --> 13,14
+# print(sayılar[2:-1]) #-1 dahil değil .---> 13,14,15
+# # tuple kullanım amacı:
+'''
+Tuple vs list
+-tuple kopya üretemiyor.ram üzerinden bakılıyor.daha az ram kullanır.
+içinde dğişiklik olamayacağı için az veri ve ram kullanımından dolayı tuple kullanılır.,
+-tuple nesnenin kopyasını üretmez direkt olarak nesnenin kendisini kullanır,list ise 
+nesnenin kopyasını üreterek çalışır.
+-boyutları sabit olduğundan ramde sıkıştırılmış olarak tutulurlar.
+-list'lere append denildiğinde fazladan yer açarak boyutlanır.
+-list() 0
+-list().append(x) -->3
+-kısaca daha hızlı ve daha az yer kaplarlar.
+'''
+# 3-)Set
+'''
+-matematikteki kümelere benzer.
+-tanımlaması --- {} işaretleri arasında tanımlanır.
+-ancak bu şekilde boş set tanımlanamaz.çünkü bu tanım dict'e aittir.
+-eleman tekrarı yoktur.
+-Değerleri değiştirilebilir ve ya silinebilir.
+-Index yapısı yoktur.
+-Slicing yoktur.
+'''
+# s1={}
+# print(type(s1))  #class,dict
+# s2=set()
+# print(type(s2))  #class,set
+# s3={1,1,1,1,2,3,4,5}
+# print(len(s3))
+#9 değeri vermez çünkü tekrar eden elemenları 1 olarak sayar.
+# s3[2]=19
+
+# ------SET METTOTLARI:
+# ------add
+# s3={1,1,1,1,2,3,4,5}
+# print(len(s3))
+# s3.add(6)
+# s3.add(7)
+# print(s3)
+# # -----update:
+# s3.update([7,8,9])
+# s3.update([10,11,12])
+# print(s3)
+#
+# # ----discard: bu silinmek istenen veriyi bulamazsa birşey yapmaz
+# s3.discard(10)
+# print(s3)
+#
+# # -----remove: bu silinmek istenen veriyi bulamazsa hata döner
+# # s3.remove(20)
+# # print(s3)
+#
+# # -----pop: set'in en baştaki elemanını siler.
+# #  ve o elemanı size döner.
+# print(s3.pop())
+# print(s3)
+
+# clear :siliyor
+# copy: başka bir listeye atıyır.
+# s3={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+# ------difference: fark alma metotu.
+# s3=
+# s4={10,11,12,13,14,15}
+# s4_un_farki=s4.difference(s3)
+# print(s3.difference(s4))
+# -----difference_update:farkını bulur ve ana set üzerinde o farklı olanları siler.
+# s3.difference_update(s4)
+# print(s3)
+# print(s4)
+
+# ------intersection:
+# kesisim_kumesi=s3.intersection(s4)
+# print("kesişim",kesisim_kumesi)
+#
+# # -------union:
+# birlesim_kumesi=s3.union(s4)
+# print("birleşim",birlesim_kumesi)
+
+#
+# s3.isdisjoint(s4):kümelerin ayrık olup olmadığını döner.
+# True/False döner
+# s3.issubset(s4):küme diğerinin alt kümesi mi?
+# s3.issuperset(s4):kümenin diğer kümeyi kapsamadığını döner.
+# ---CRUD :create read update delete..(list daha çok karşınıza çıkar)
+
+# 4-) Dictionary
+'''
+-key-value şeklinde veri tutar.
+-{} içinde tanımlanır. set gibi değil.{key:value} şeklinde tanımlanır.
+-key:string,numeric ve ya tuple cinsinden tanımlanabiir.
+birden fazla aynı isimden key kullanılırsa en son hangisi tanımlandıysa onun value'sunu verir.
+-aynı keyden birden fazla tanımlama yapmayın demek isteniyor.
+-value:tüm veri tiplerinden tanımlanabilir.
+'''
+# ogrenci={"nur","öztürk",True,1} #mesela bu bir set oldu.
+ogrenci={
+    "ad":"nur",
+    "soyad":"öztürk",
+    "mezun_mu":True,
+    "il_plaka":6,
+    "mezun_bolumleri":["istatistik","pc müh","psikoloji"],
+    (6,):"yaşadığı il",
+    99:"diğer"
+}
+# dictionary_degiskeni[key]
+print(ogrenci["ad"])
+print(ogrenci[(6,)])
+print(ogrenci[99])   #index değil.key bu şekilde tanımlandığı için bu şekilde veriyi isteriz
+ogrenci["ad"]="rabia nur"
+print(ogrenci)  #veri güncellenebilir.
+
+# del ogrenci["mezun_mu"]
+# print(ogrenci)  #veriyi siliyor.
 
 
+# Dictionary metotları:
+# ----update:veri eklemek için kullanılır.
+# update(*kwargs): (key=value)--string gibi yazılmıyor.(key değeri string vb yazmıyoruz)
+# ogrenci.update(okul="Gazi")
+# print(ogrenci)
+#
+# # ------pop:veri silmek için kullanılır.
+# print(ogrenci.pop("ad"))
+# print(ogrenci)
+#
+# # -----popitem:son veriyi siler.
+# #ogrenci.popitem() #en son veriyi siliyor.
+#
+# #-----get
+# print(ogrenci.get("soyad")) #değeri döndürür.
+#
+# # ----items: for ile kullanıcaz
+# print(ogrenci.items()) #tuple listesi
+#
+# # print(ogrenci.keys())
+# # print(ogrenci.values())
 
+for (key,value) in ogrenci.items():
+    print(f"key:{key}  value={value}")
 
+for i in ogrenci.values():
+    print(i)
 
+for i in ogrenci.keys():
+    print(ogrenci.get(i))
 
+ogrenciler=[
+    {
+        "ad":"nur",
+        "soyad":"öztürk",
+        "il":"ankara"
+    },
+    {
+        "ad":"damla",
+        "soyad":"kahraman",
+        "il":"izmir"
+    },
+    {
+        "ad":"tayfun",
+        "soyad":"karakavuz",
+        "il":"izmir"
+    }
+]
 
-
-
-
+# uzun versiyon:
+ogrenci=ogrenciler[1]
+print(ogrenci["ad"])
+# kısa versiyon:
+print(ogrenciler[1])
+print(ogrenciler[1]["ad"])
+# JSON (javascript object natation)tipine benzerler.
 
 
 
