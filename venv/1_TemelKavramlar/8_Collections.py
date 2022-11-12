@@ -307,6 +307,7 @@
 # sembol istiyor musunuz ? h
 # Ascii table
 # t 3 _ _ _ _ _
+
 #
 # karakter_sayisi=int(input("Kaç karakterli şifre istiyorsunuz,lütfen giriniz :"))
 # buyuk_harf_olacak_mi=input("Büyük  olacak mı ?: e/h")
@@ -439,7 +440,7 @@ nesnenin kopyasını üreterek çalışır.
 # copy: başka bir listeye atıyır.
 # s3={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 # ------difference: fark alma metotu.
-# s3=
+# s3={1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 # s4={10,11,12,13,14,15}
 # s4_un_farki=s4.difference(s3)
 # print(s3.difference(s4))

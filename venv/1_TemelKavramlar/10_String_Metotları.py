@@ -1,4 +1,4 @@
-#String Metorları:
+#String Metotları:
 # String karakterler dizisidir.
 # harf="g" #string
 # yazi="merhaba dünya" #string
@@ -49,4 +49,3 @@ print(';'.join(mail_listesi)) #nur.ozturk@bilgeadam.com;sema.yılmaz@bilgeadam.c
 
 print("merhaba dünya".center(30,"*")) #********merhaba dünya*********
 print("merhaba dünya".center(20,"-")) #---merhaba dünya----
-""
