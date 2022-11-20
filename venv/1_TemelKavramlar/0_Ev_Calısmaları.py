@@ -439,14 +439,14 @@ birden fazla aynı isimden key kullanılırsa en son hangisi tanımlandıysa onu
 #print(ogrenci1)  #veri silindi.
 
 # Dictionary metotları:
-erkek1={
-    "isim":"Mert",
-    "soyisim":"YAMAN",
-    "yaş":26,
-    "boyu":1.90,
-    "kilo":80,
-    "okul":"Abant İzzet Baysal Üniversitesi"
-}
+# erkek1={
+#     "isim":"Mert",
+#     "soyisim":"YAMAN",
+#     "yaş":26,
+#     "boyu":1.90,
+#     "kilo":80,
+#     "okul":"Abant İzzet Baysal Üniversitesi"
+# }
 # print(erkek1)
 # # update:veri eklemek için kullanılır.
 # erkek1.update(isim="MertCan")
@@ -466,30 +466,30 @@ erkek1={
 #print(erkek1.keys()) #dict_keys(['isim', 'soyisim', 'yaş', 'boyu', 'kilo', 'okul'])
 #print(erkek1.values())  #dict_values(['Mert', 'YAMAN', 26, 1.9, 80, 'Abant İzzet Baysal Üniversitesi'])
 
-for (key,value) in erkek1.items():
-    print(f"Key:{key},Value:{value}")
-for i in erkek1.values():
-    print(i)
-for i in erkek1.keys():
-    print(i)
-
-ogrenciler=[
-    {
-        "ad":"nur",
-        "soyad":"öztürk",
-        "il":"ankara"
-    },
-    {
-        "ad":"damla",
-        "soyad":"kahraman",
-        "il":"izmir"
-    },
-    {
-        "ad":"tayfun",
-        "soyad":"karakavuz",
-        "il":"izmir"
-    }
-]
+# for (key,value) in erkek1.items():
+#     print(f"Key:{key},Value:{value}")
+# for i in erkek1.values():
+#     print(i)
+# for i in erkek1.keys():
+#     print(i)
+#
+# ogrenciler=[
+#     {
+#         "ad":"nur",
+#         "soyad":"öztürk",
+#         "il":"ankara"
+#     },
+#     {
+#         "ad":"damla",
+#         "soyad":"kahraman",
+#         "il":"izmir"
+#     },
+#     {
+#         "ad":"tayfun",
+#         "soyad":"karakavuz",
+#         "il":"izmir"
+#     }
+# ]
 # print(ogrenciler[1]) #{'ad': 'damla', 'soyad': 'kahraman', 'il': 'izmir'}
 # print(ogrenciler[1]["ad"])   #damla
 # print(ogrenciler[2]["il"])   #izmir
@@ -538,17 +538,39 @@ ogrenciler=[
 # print(mailler.replace(";","---").split("@bilgeadama.com"))
 # print(metin.title()) #ilk harf büyür.
 
-# Örnek:
-girilen=input("Bir sayı giriniz:")
-if girilen.isdigit():
-    print("sayısal hale dönüştürülebilir.")
-    sayi=int(girilen)
-else:
-    print("metin içinde harf ve ya sembol var.")
+# # Örnek:
+# girilen=input("Bir sayı giriniz:")
+# if girilen.isdigit():
+#     print("sayısal hale dönüştürülebilir.")
+#     sayi=int(girilen)
+# else:
+#     print("metin içinde harf ve ya sembol var.")
+#
+# print(girilen.isalnum())
+# print("merhaba dünya".center(20,"*")) #***merhaba dünya****
+# print("hello".center(9,"+"))          #++hello++
 
-print(girilen.isalnum())
-print("merhaba dünya".center(20,"*")) #***merhaba dünya****
-print("hello".center(9,"+"))          #++hello++
+# ÖRNEK:
+kullanici_girisi=float(input("Sayi giriniz:"))
+islem=kullanici_girisi**2
+print(f"Sayının karesi:{islem}")
+
+# fonksiyon olarak nasıl yazılır ?
+
+def kare_bul():
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

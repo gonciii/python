@@ -1,0 +1,3 @@
+[{'ad': 'Nur', 'cinsiyet': 'K', 'dogumTarihi': '1980', 'soyad': 'Öztürk'},
+ {'ad': 'Gonca', 'cinsiyet': 'K', 'dogumTarihi': '1997', 'soyad': 'Çomak'},
+ {'ad': 'Ozan', 'cinsiyet': 'E', 'dogumTarihi': '1990', 'soyad': ',içcan'}]
