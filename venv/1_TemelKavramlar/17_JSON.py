@@ -53,6 +53,10 @@ dict_ogrenci_list = [
 ]
 json.dump(dict_ogrenci_list, open("students.json", "a", encoding="utf8"), ensure_ascii=False)
 
+#json:veri saklamımıza yardım eden ,bizdeki dictionary'e denk gelebilir.
+
+
+
 
 
 
