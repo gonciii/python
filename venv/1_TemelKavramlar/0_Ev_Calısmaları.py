@@ -551,13 +551,507 @@ birden fazla aynı isimden key kullanılırsa en son hangisi tanımlandıysa onu
 # print("hello".center(9,"+"))          #++hello++
 
 # ÖRNEK:
-kullanici_girisi=float(input("Sayi giriniz:"))
-islem=kullanici_girisi**2
-print(f"Sayının karesi:{islem}")
-
+# kullanici_girisi=float(input("Sayi giriniz:"))
+# islem=kullanici_girisi**2
+# print(f"Sayının karesi:{islem}")
+#
 # fonksiyon olarak nasıl yazılır ?
+# def kare_fonksiyon(a:int,b:int):
+#     kare_islemi=pow(a,b)
+#     print(f"Sayının karesi:{kare_islemi}")
+#
+# kare_fonksiyon(3,2)
+#
+# def kare_al(a):
+#     us_alma=a**2
+#     print(f"Sayının karesi :{us_alma}")
+# kare_al(9)
+#
+# def karekok_al(a:float)->int:
+#     import math
+#     kok_alma_islemi=math.sqrt(a)
+#     print(f"Sayının karekökü:{kok_alma_islemi}")
+# karekok_al(81)
 
-def kare_bul():
+
+#BÜTÜK ÖRNEK ÇÖZÜMLERİ:
+#1-)Kullanıcıdan alınan bir sayının karesini bulan ve ekranda gösteren uygulamayı yazınız.
+#kullanici_girisi=int(input("Lütfen bir sayı giriniz:"))
+#kare_bulma=pow(kullanici_girisi,2)
+#print(f"Girdiğiniz sayının karesi:{kare_bulma}")
+
+# 2-) Kullanıcıdan vize ve final notunuzun ortalamasını istediği programı yazınız.
+
+# vize=float(input("Lütfen vize notunuzu giriniz:"))
+# final=float(input("Lütfen final notunuzu giriniz:"))
+# average=(vize*0.4)+(final*0.6)
+# print(f"Vize ve final notunuzun ortalaması:{average}")
+
+#3-) kullanıcının adını ve soyadını alarak ad.soyad@bilgeadamakademi.com şeklinde
+# bir mail adresi oluşturan ve gösteren uygulamayı yazınız.
+
+# ad=input("Lütfen isminizi giriniz:")
+# soyad=input("Lütfen soyisiminizi giriniz:")
+# mail_adresi=f"{ad}.{soyad}@bilgeadamakademi.com"
+# print(f"mail adresi:{mail_adresi}".lower().replace("ç","c"))
+
+# #4-) kullanıcıdan isim isteyip doğru olup olmadığını kontrol ediniz.
+# kullanici_adi=input("Kullanıcı adınızı giriniz:")
+# if kullanici_adi=="Bilgeadamakademi":
+#     print("Doğru cevap")
+# else:
+#     print("yanlış cevap")
+#
+# #5-)Girilen bir sayının negatif/pozitif olması durumunu kontrol ediniz.ve ekranda durumunu gösteriniz.
+# sayi=int(input("bir sayı giriniz:"))
+# if sayi==0:
+#     print("sayı 0 dır.")
+# elif sayi>0:
+#     print("sayı pozitiftir.")
+# else:
+#     print("sayı negatiftir.")
+#
+# #6-) Girilen bir sayının çift/tek olmasını bulunuz ve ekrana yazdrınız.
+#
+# sayi1=int(input("Lütfen bir sayı giriniz:"))
+# if sayi1%2==0:
+#     print("sayi çift.")
+# else:
+#     print("sayı tektir.")
+#
+# #7-) Girilen bir x sayısının,yine kullaıcıdan istenen bir
+# # y sayısına tam bölünüp bölünmediğini kontrol ediniz ve ekranda göteriniz.
+#
+# sayi_1=int(input("birinci sayıyı giriniz:"))
+# sayi_2=int(input("ikinci sayıyı giriniz:"))
+# islem=sayi_1%sayi_2
+# if  sayi_2==0:
+#     print("Lütfen sıfır dışında bir sayı giriniz.")
+# elif islem!=0:
+#     print(f"tam bölünemez.")
+# else:
+#     print("tam bölünür.")
+#
+# #8-) Girilen iki sayıdan hangisinin büyük olduğunu bulan uygulamayı yazınız.
+# a=int(input("1.sayıyı giriniz:"))
+# b=int(input("2.sayıyı giriniz:"))
+# if a>b:
+#     print(f"1.sayı 2.sayıdan daha büyüktür:{a},{b}")
+# elif a==b:
+#     print(f"Girilen sayılar birbirine eşittir:{a},{b}")
+# else:
+#     print(f"2.sayı 1.sayıdan büyüktür:{a},{b}")
+#
+# #9-) Girilen vize notunun 0-100 arasında olmasını kontrol ediniz.
+# # eğer doğru giriş yapıldıysa giriş başarılı uyarsını gösterelim.
+# # eğer ortalama 50 ve üzerinde ise geçti değilse kaldı yazdıralım.
+#
+# vize_notu=float(input("Lütfen vize notunuzu giriniz:"))
+# final_notu=float(input("Lütfen final notunuz giriniz:"))
+# ortalama=(vize_notu*0.4)+(final_notu*0.6)
+# if vize_notu>0 and vize_notu<100:
+#     print("Giriş başarılıdır.")
+#     if ortalama>=50:
+#         print("geçtiniz.")
+#     elif ortalama<50:
+#         print("Sınıfta kaldınız. !")
+#
+# else:
+#      print("Lütfen notlarınızı tekrar giriniz.")
+
+#10-)
+'''
+Eğer ortalama:
+  0-30 aralığında ff
+  31-50 DD
+  51-70 CC
+  71-90 BB
+  91-100 AA
+harf notunu belirleyen ve ortalama ile birlikte ekranda gösteren uyglamayı yazınız.
+'''
+# vize=float(input("vize notu :"))
+# final=float(input("final notu:"))
+# ortalama=(vize*0.3)+(final*0.7)
+# harf_notu=""
+# if 91< ortalama <100:
+#     harf_notu="AA"
+# elif 71 < ortalama <90:
+#     harf_notu="BB"
+# elif 51 < ortalama < 70:
+#     harf_notu="CC"
+# elif 31< ortalama < 50:
+#     harf_notu="DD"
+# else:
+#     harf_notu="FF"
+# print(f"Harf notunuz:{harf_notu},vize :{vize},final:{final}")
+
+#11-) kullanıcıdan kullanıcı adı ve şifre istedikten sonra
+# ka:admin ve şifre:1234 ise giriş başarılı değilse,
+# hangi bilgi hatalıysa onun uyarısını veren bir uygulama yazınız.
+
+# kullanici_adi=input("Lütfen kullanıcı adınızı giriniz:")
+# sifre=int(input("Lütfen şifrenizi giriniz:"))
+# if kullanici_adi=="admin" and sifre==1234:
+#      print("Kullanıcı adı ve şifre doğru,GİRİŞ BAŞARILIDIR.")
+# elif kullanici_adi=="admin" and sifre!=1234:
+#      print("Şifre yanlış,tekrar deneyiniz.")
+# elif kullanici_adi!="admin" and sifre==1234:
+#      print("Kullanıcı ismi yanlış,tekrar deneyeniz.")
+# elif kullanici_adi!="admin" and sifre!=1234:
+#      print("Kullanıcı adı ve şifre yanlış.")
+# else:
+#      print("Lütfen bilgileri kontrol ediniz.")
+
+#12-)
+# Kullanıcıdan sipariş etmek istediğin kitap sayısını alarak indirim uygulayan
+# ve müşteriye ödemesi gereken tutarı,indirim oranını ve indirimsiz fiyatı gösteren
+# uygulamayı yazınız.İndirim oranları aşağıdadır:
+'''
+birim fiyatı:10 tl
+kitap sayısı;
+20'den az ise %5 indirim 
+20-50 ise %10
+50-100 ise %15
+100'den fazla ise %24 indirim
+'''
+# kitap_adeti=int(input("Lütfen sipraiş etmek istediğiniz kitap sayısını giriniz:"))
+# birim_fiyati=10
+# indirimsiz_fiyat=kitap_adeti*birim_fiyati
+# indirim_orani=0
+# if kitap_adeti<20:
+#     indirim_orani=0.5
+# elif 20 < kitap_adeti <50 :
+#     indirim_orani=0.10
+# elif 50 < kitap_adeti <100:
+#     indirim_orani=0.15
+# elif kitap_adeti>100:
+#     indirim_orani=0.24
+# indirimli_fiyat=indirimsiz_fiyat-(indirimsiz_fiyat*indirim_orani)/100
+# print(f"kitap sayısı:{kitap_adeti},indirimsiz fiyat:{indirimsiz_fiyat},indirim oranı:{indirim_orani*100},"
+#       f"indirimli fiyatı :{indirimli_fiyat}")
+
+#13-)
+# Kullanıcıdan almak istediği ürünü isteyerek ürünün hangi reyonda olduğunu gösteren bir uygulama yapınız.
+'''
+Domates,biber,patlıcan ->Sebze reyonu
+Parfüm,diş macunu,şampuan ->Kozmetik
+Cep Telefonu,bilgisayar,ses sistemleri ->Teknoloji reyonu
+bunlar dışında bir giriş yapılırsa "ürün bulunmamaktadır" uyarısı vericektir.
+'''
+
+# urun_cesiti=input("Lütfen istediğiniz ürünü giriniz:").lower()
+# mesaj=" "
+# if urun_cesiti=="domates" or urun_cesiti=="biber" or urun_cesiti=="patlıcan":
+#     mesaj ="Sebze reyonu"
+# elif urun_cesiti=="parfüm" or urun_cesiti=="diş macunu" or urun_cesiti=="şampuan":
+#     mesaj="Kozmetik reyonu"
+# elif urun_cesiti=="cep telefonu" or urun_cesiti=="bilgisayar" or urun_cesiti=="ses sistemleri":
+#     mesaj="Teknoloji reyonu"
+# else:
+#     mesaj="böyle bir ürün bulunmamaktadır."
+# print(f"Almak istediğiniz ürün çeşiti:{urun_cesiti},Bulunduğu reyon:{mesaj}")
+
+#14-) # 1-10 arasında rastgele üretilen 3 adet sayının hangisinin
+# büyük olduğuna bulan ve ekranda hem sayıları hem en büyük sayı:{x} gibi yazdıran uygulamayı yazınız.
+
+# import random
+# s1=random.randint(1,10)
+# s2=random.randint(1,10)
+# s3=random.randint(1,10)
+#
+# if s1>s2 and s1>s3:
+#     print(f"En büyük sayı s1'dir:{s1},s2:{s2},s3:{s3}")
+# elif s2>s1 and s2>s3:
+#     print(f"En büyük sayı s2'dir:{s2},s1:{s1},s3:{s3}")
+# elif s3>s1 and s3>s2:
+#     print(f"En büyük sayı s3'dür:{s3},s1:{s1},s2:{s2}")
+# else:
+#     print("sayı bulunamamıştır.")
+
+
+#15-)
+# girilen boy ve kilo bilgileri ile beden kitle indekxi hesaplayan bir uygulama yazınız:
+# BKI=Kilo/(boy**2)  kilo(kg) boy(m)
+'''
+# • Beden kitle/kütle indeksi < 18,5 ise Zayıf
+# •    18,5 < Beden kitle/kütle indeksi < 24,9 ise Normal
+# •    25 < Beden kitle/kütle indeksi < 29,9 ise Fazla kilolu
+# •    30 < Beden kitle/kütle indeksi < 34,9 ise I. derece obez
+# •    35 < Beden kitle/kütle indeksi < 39,9 ise II. derece obez
+# •    Beden kitle/kütle indeksi > 40 ise III. derece obez
+
+'''
+# boy=float(input("Lütfen boyunuzu giriniz(m):"))
+# kilo=float(input("Lütfen kilonuzu giriniz[kg):"))
+# index=kilo/(boy**2)
+# bki=""
+# if index<18.5:
+#     bki="ZAYIF"
+# elif 18.5 < index < 24.9:
+#     bki="NORMAL"
+# elif 25 < index <29.9:
+#     bki="FAZLA KİLOLU"
+# elif 30 < index < 34.9:
+#     bki="I.DERECE OBEZ"
+# elif 35 < index < 39.9:
+#     bki="II.DERECE OBEZ"
+# else:
+#     bki="III.DERECE OBEZ"
+#
+# print(f"BOY:{boy},KİLO:{kilo},Beden kitle indexi:{bki}")
+
+#16-) match-case ile gün yazmak:
+
+# haftanin_gunleri=input("Lütfen gün giriniz:")
+# match haftanin_gunleri:
+#     case "pazartesi":
+#         print("haftanın 1.günü")
+#     case "salı":
+#         print("haftanın 2.günü")
+#     case "çarşamba":
+#         print("haftanın 3.günü")
+#     case "perşembe":
+#         print("haftanın 4.günü")
+#     case "cuma":
+#         print("haftanın 5.günü")
+
+#17-)# and ile match örneği:
+# kullanıcıdan kullanıcı ve şifre istedikten
+# sonra ka:admin ve şifre:1234 ise giriş başarılı değilse,
+# hangi bilgi hatalıysa onun uyarısını veren bir uygulama yazınız.
+
+# kullanici_adi=input("Lütfen kullanıcı adınızı giriniz:")
+# sifre=int(input("Şifre giriniz:"))
+# match kullanici_adi:
+#     case "admin":
+#          match sifre:
+#             case 1234 :
+#                 print("giriş başarılır.")
+#
+#             case _:
+#                 print("şifre yanlıştır.")
+#     case _:
+#         print("kullanıcı adı yanlıştır.")
+
+#18-)
+# kullanici_secimi=input("Lütfen indirimden almak istediğiniz ürünü giriniz:")
+# match kullanici_secimi:
+#     case "ayakkabı":
+#         print("NİKE")
+#     case "kaban":
+#         print("ZARA")
+#     case "aksesuar":
+#         print("Atasay jewellery")
+#     case "sweatshirt":
+#         print("BERSHKA")
+#     case _:
+#         print("aradığınız ürün için marka bulunamadı.")
+
+#19-) # for örnekleri:
+# 10-20 arasındaki sayıları geriden yazdırınız.20-19-18-...11
+
+# for i in range(20,10,-1):
+#     print(i)
+
+#20-) 0-20 arasındaki tek sayıların toplamını döngü ile bulunuz.
+
+# toplam=0
+# for i in range(1,20,2):
+#     toplam +=i
+#
+# print(toplam)
+
+#21-) 1-100 arasındaki teklerin  ve çiftlerin ayrı ayrı toplamını aynı döngüde hesaplayınız.
+
+cift_sayilar=0
+tek_sayilar=0
+# for i in range(1,101):
+#     if i%2==0:
+#         cift_sayilar +=1
+#     else:
+#         tek_sayilar +=1
+# print(f"çift sayıların toplamı:{cift_sayilar},tek sayıların toplamı:{tek_sayilar}")
+
+#22-) çarpım tablosunu döngü kurarak nasıl yaparız.
+title_list=["1'ler","2'ler","3'ler","4'ler","5'ler","6'lar","7'ler","8'ler","9'lar","10'lar"]
+# for i in range(1,11):
+#     print(title_list[i-1])
+#     print("------")
+#     for j in range(1,11):
+#         print(f"{i}x{j}={i*j}")
+#     print("------")
+
+#23-) while örneği:
+# while ile 1'den 10' a kadar sayıları yazdırın.
+# sayac=0
+# while sayac<10:
+#     sayac +=1
+#     print(sayac)
+
+#24-)
+#Kullanıcı hayır yazana kadar merhaba dünya yazan uygulamayı yazınız.
+
+# devam_etsin_mi="evet"
+# while devam_etsin_mi=="evet":
+#     print("merhaba dünya")
+#     devam_etsin_mi=input("devam etmek istiyor musunuz? : evet/hayır:")
+
+#25-) # kullanıcı hayır diyene kadar rastgele sayı üreterek (1-100) ekranda gösteren uygulamayı yazınız.
+
+# import random as rnd
+# while True:
+#     print(f"Üretilen sayı:{rnd.randint(1,100)}")
+#     girilen=input("çıkmak için hayır yazınız.")
+#     if girilen=="hayır":
+#         print("çıkış yapıldı")
+#         break
+#26-)
+# kullanıcıdan bir sayı alınız,girilen değer 0-10 aralığında
+# ise doğru giriş değilse doğru giriş yapana kadar karşı taraftan bilgi istemeye devam
+# eden programı ekrana yazdırınız.
+
+# while True:
+#     kullanici_girisi = int(input("Lütfen bir sayı giriniz:"))
+#     if 0<= kullanici_girisi <=10:
+#         print("doğru giriş yapıldı.")
+#         break
+#     else:
+#         print("tekrar deneyiniz.")
+
+#27-) # rastgele 4 haneli bir doğrulama kodu belirleyiniz.
+# ve ekranda bu değer gösteriniz.Kullanıcıdan bu kodu doğru bir şekilde girmesini isteyiniz
+# ve doğru giriş yapılana kadar uyarı veriniz.
+# 1000-999
+# import random as rnd
+# rastgele_kod=rnd.randint(1000,9999)
+# print(rastgele_kod)
+# giris_dogru_mu=False
+# while not giris_dogru_mu:
+#     girilen = int(input("4 haneli bir kod giriniz:"))
+#     if girilen != rastgele_kod:
+#         print("yanlış giriş yaptınız.,tekrar deneyiniz.")
+#     else:
+#         print("giriş  başarılı yapıldı")
+#     break
+
+
+#28-)
+# rastgele 4 haneli bir doğrulama kodu belirleyiniz.
+# ve ekranda bu değer gösteriniz.Kullanıcıdan bu kodu doğru bir şekilde girmesini isteyiniz
+# ve doğru giriş yapılana kadar uyarı veriniz.
+# 1000-999
+# geliştirme: her yanlış girildiğinde yeniden kod üretilerek gösterilsin.
+# import random as rnd
+# sayi=rnd.randint(1000,9999)
+# print(f"Üretilen sayı:{sayi}")
+# kullanici_girisi=int(input("Lütfen 4 haneli bir kod giriniz:"))
+# while kullanici_girisi!=sayi:
+#     sayi = rnd.randint(1000, 9999)
+#     print(f"Tekrar üretilen kod:{sayi}")
+#     kullanici_girisi = int(input("Lütfen 4 haneli bir kod giriniz:"))
+# print("giriş başarılı.")
+
+#29-)# rastgele 4 haneli bir doğrulama kodu belirleyiniz.
+# ve ekranda bu değer gösteriniz.Kullanıcıdan bu kodu doğru bir şekilde girmesini isteyiniz
+# ve 3 kez yanlış giriş yapılırsa hakkınız tükendi uyarısını veriniz
+
+# import random as rnd
+# rastgele_kod=rnd.randint(1000,9999)
+# print(f"Üretilen rastgele kod:{rastgele_kod}")
+# sayac=0
+# kod=int(input("Lütfen 4 haneli kod giriniz:"))
+# while rastgele_kod != kod:
+#     sayac +=1
+#     if sayac==3:
+#         print("3 giriş hakkınız bitmiştir.")
+#         break
+#     else:
+#         kod = int(input("Lütfen 4 haneli kod giriniz:"))
+#
+# if rastgele_kod==kod:
+#     print("giriş başarılıdır.")
+
+#30-)# vize final notları girilirken 0-100 aralığında girilmesini isteyiniz.
+# eğer vize doğru girildiyse final notunu isteyiniz.her bir notu girerken 0-100 aralığında
+# alana kadar notları yeniden isteyiniz.
+# her ikisi de doğru girildiyse ortalama hesaplayıp gösteiniz.
+
+vize=int(input("Lütfen vize notunuzu giriniz:"))
+final=int(input("Lütfen final notunuzu giriniz:"))
+ortalama=vize*0.3+final*0.7
+sayac=0
+while vize<100:
+    print("vie")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

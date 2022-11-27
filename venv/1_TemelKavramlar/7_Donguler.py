@@ -120,7 +120,7 @@ while kosul:
 #     print(sayac)
 #     sayac +=1
 
-# Kullanıcı hayır yazana kadar merhaba dünya yazan uygulamayı yazınız.
+#Kullanıcı hayır yazana kadar merhaba dünya yazan uygulamayı yazınız.
 # devam_mi="evet"
 # while devam_mi=="evet":
 #     print("merhaba dünya")
@@ -244,7 +244,7 @@ while kosul:
 #
 # final=-1
 # while not 0<= final <=100:
-#     finaş=float(input("final giriniz:"))
+#     final=float(input("final giriniz:"))
 #
 # ort=vize*0.4+final*0.6
 # print(ort)
