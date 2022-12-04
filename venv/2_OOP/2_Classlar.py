@@ -114,29 +114,29 @@ import datetime
     #pass
 #a2=Araba()
 
-class Araba:   #araba diye bir sınıf tanımlanıyor.
-    def __init__(self,marka:str="",model=""):    #init'i kullanmak aslında boş create etmek gibi bir şey anlamına gelir.
-        self.brand=marka
-        self.model=model
-    def bilgileri_getir(self):      #parametresiz metot.              #otomatik self tanımlanıyor.self:sınıfın kendisini temsil eder.
-        print(f"{self.brand}-{self.model}")
+# class Araba:   #araba diye bir sınıf tanımlanıyor.
+#     def __init__(self,marka:str="",model=""):    #init'i kullanmak aslında boş create etmek gibi bir şey anlamına gelir.
+#         self.brand=marka
+#         self.model=model
+#     def bilgileri_getir(self):      #parametresiz metot.              #otomatik self tanımlanıyor.self:sınıfın kendisini temsil eder.
+#         print(f"{self.brand}-{self.model}")
 
-a1=Araba("audi","Q2")
+#a1=Araba("audi","Q2")
 #print(a1.model)
 
-a3=Araba() #şeklinde tanımlama yapmak istersek
-# constructor'daki parametreleri nullable yapmamız yeterlidir.
-a3.brand="seat"
-a3.model="leon"
-#print(a3.brand)
+# a3=Araba() #şeklinde tanımlama yapmak istersek
+# # constructor'daki parametreleri nullable yapmamız yeterlidir.
+# a3.brand="seat"
+# a3.model="leon"
+# #print(a3.brand)
 
 #self:sınıfın kendisini temsil eder.
 # function: def global kapsamda tanımlananlar.
 # metot: def sınıf içinde tanımlanan fonskiyonalara metot denir.
 #sınıf instance'ı olmadığı sürece metotlara erişemiyoruz.
 
-a3.bilgileri_getir()  #seat-leon
-a1.bilgileri_getir()  #audi-Q2
+# a3.bilgileri_getir()  #seat-leon
+# a1.bilgileri_getir()  #audi-Q2
 
 #örnek:
 #çalışan sınıfı oluşturunuz,init'de ad,soyad,işe giriş tarihi(datetime)alınız.
@@ -157,18 +157,18 @@ a1.bilgileri_getir()  #audi-Q2
 #         return
 
 
-
-import datetime
-class Calisan:
-    def __init__(self,ad:str="",soyad:str="",ise_giris_tarihi:datetime=datetime.datetime.now()):
-        self.name=ad
-        self.surname=soyad
-        self.hiring_date=ise_giris_tarihi
-    def calisma_suresi_hesapla(self):
-        simdiki_zaman=datetime.datetime.now()
-        fark=simdiki_zaman-self.hiring_date
-        yil=fark.days/365
-        return yil
+#
+# import datetime
+# class Calisan:
+#     def __init__(self,ad:str="",soyad:str="",ise_giris_tarihi:datetime=datetime.datetime.now()):
+#         self.name=ad
+#         self.surname=soyad
+#         self.hiring_date=ise_giris_tarihi
+#     def calisma_suresi_hesapla(self):
+#         simdiki_zaman=datetime.datetime.now()
+#         fark=simdiki_zaman-self.hiring_date
+#         yil=fark.days/365
+#         return yil
 
 # c1=Calisan("ali","yılmaz",datetime.datetime(2000,10,12))
 # print(c1.calisma_suresi_hesapla()) #22.13972602739726
@@ -177,8 +177,33 @@ class Calisan:
 # c2.hiring_date=datetime.datetime(2005,1,1)
 # print(c2.calisma_suresi_hesapla())   #17.915068493150685
 
-c3=Calisan()
-c3.name=input("çalışan adı giriniz:")
-c3.surname=input("çalışan soyadı giriniz:")
-c3.hiring_date=datetime.datetime.strptime(input("işe giriş tarihini giriniz(g/a/y):"),"%d/%M/%Y")
-print(c3.calisma_suresi_hesapla())
+# c3=Calisan()
+# c3.name=input("çalışan adı giriniz:")
+# c3.surname=input("çalışan soyadı giriniz:")
+# c3.hiring_date=datetime.datetime.strptime(input("işe giriş tarihini giriniz(g/a/y):"),"%d/%M/%Y")
+# print(c3.calisma_suresi_hesapla())
+
+#SINIFIN İÇİNDE TANIMLANAN DEĞİŞKEN,DEĞERİNİ TÜM instancelarla paylaşılır.
+class Student:
+    #sertifikalar=[]   #farklı instance'lar da bu değeri doldurabiliyor ve tüm inctance'ler
+    #sorunu çözmek için constructor içinde bu değişkeni tanımlamalıyız.
+    def __init__(self):
+        self.sertifikalar=[]
+    def sertifika_ekle(self,sertifika_adi):
+        self.sertifikalar.append(sertifika_adi)
+    def sertifikalari_goster(self):
+        print(self.sertifikalar)
+
+st1=Student()
+st1.sertifika_ekle("st1 s1")
+st1.sertifika_ekle("st1 s2")
+st1.sertifika_ekle("st1 st3")
+st1.sertifikalari_goster()  #['st1 s1', 'st1 s2', 'st1 st3']
+
+st2=Student()
+st2.sertifika_ekle("st2 s1")
+st2.sertifika_ekle("st2 s2")
+st2.sertifika_ekle("st2 s3")
+st2.sertifikalari_goster() #sorunlu versiyon#['st1 s1', 'st1 s2', 'st1 st3', 'st2 s1', 'st2 s2', 'st2 s3']
+                           #düzeltilmiş versiyon:['st2 s1', 'st2 s2', 'st2 s3']
+

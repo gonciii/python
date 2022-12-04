@@ -79,3 +79,5 @@ print(tarih.timestamp()) #1670706000.0  #saniye cinsinden tarihin karşılığı
 
 
 
+
+

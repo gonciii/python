@@ -212,8 +212,9 @@ while kosul:
 # if kod ==girilen :
 #     print("giriş başarılı.")
 
-# vize final notları girilirken 0-100 aralığında girilmesini isteyiniz.eğer vize doğru girildiyse final notunu isteyiniz.her bir notu girerken 0-100 aralığında alana kadar notları yeniden isteyiniz.
-# her ikisi de doğru girildiyse ortalama hesaplayıp gösteiniz.
+# vize final notları girilirken 0-100 aralığında girilmesini isteyiniz
+# .eğer vize doğru girildiyse final notunu isteyiniz.her bir notu girerken 0-100 aralığında alana kadar notları yeniden isteyiniz.
+# her ikisi de doğru girildiyse ortalama hesaplayıp gösteriniz.
 
 # #  bu benim yaptığım :
 # vize=float(input("0-100 aralığında ki vize notunu giriniz:"))

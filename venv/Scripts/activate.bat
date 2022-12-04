@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=C:\Users\gonca.comak\PycharmProjects\PythonKonular\venv"
+set "VIRTUAL_ENV=C:\Users\gonca\AppData\Local\Programs\Python\Python310\python\venv"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"

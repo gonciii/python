@@ -976,12 +976,499 @@ title_list=["1'ler","2'ler","3'ler","4'ler","5'ler","6'lar","7'ler","8'ler","9'l
 # alana kadar notları yeniden isteyiniz.
 # her ikisi de doğru girildiyse ortalama hesaplayıp gösteiniz.
 
-vize=int(input("Lütfen vize notunuzu giriniz:"))
-final=int(input("Lütfen final notunuzu giriniz:"))
-ortalama=vize*0.3+final*0.7
-sayac=0
-while vize<100:
-    print("vie")
+# vize=-1 #random bir değer atıyoruz.
+# while not 0<= vize <=100:
+#     vize=float(input("lütfen vize notunuzu giriniz:"))
+#
+# final=-1
+# while not 0<= final <=100:
+#     final=float(input("Lütfen final notunuzu giriniz:"))
+#
+# average=vize*0.4+final*0.6  #ortalama değeri atanıyor.
+# print(f"ortalama:{average}")
+
+#31-)
+# sayı tahmini uygulaması
+# 1-10 arasında rastgele bir sayı üretilir ekranda gösterilmez.kullanıcıdan o sayıyı tahmin etmesi istenir
+# .3 kez tahmin etme hakkı olur.Hakları bittiğinde game over!yanlış girdikçe yeni tahminler( kalan hakkı kadar) yapabilir.
+# sayıyı bildiğinde ise tebrikler uyarası verilir.
+#hocanın yaptığı:
+# import random as rnd
+# rastgele_uretilen_sayi=rnd.randint(1,10)
+# print(rastgele_uretilen_sayi)
+# for i in range (3):
+#      kullanicinin_tahmini=int(input("Tahmini giriniz:"))
+#      if kullanicinin_tahmini==rastgele_uretilen_sayi:
+#         print("bildiniz")
+#         break
+#      else:
+#         print("Yanlış tahmin ettiniz.")
+
+
+#alternatif çözüm:
+# import random as rnd
+# rastgele_uretilen_sayi=rnd.randint(1,10)
+# print(rastgele_uretilen_sayi)
+# kalan_hak=3
+# while kalan_hak >0 :
+#     kalan_hak-=1
+#     kullanicinin_tahmini=int(input("Tahmini giriniz:"))
+#     if kullanicinin_tahmini==rastgele_uretilen_sayi:
+#         print("bildiniz")
+#         break
+#     else:
+#         print("Yanlış tahmin ettiniz.")
+#     if kalan_hak==0:
+#         print("game over")
+
+
+#COLLECTİONS:
+#1-) LİST
+#2-)SET
+#3-)TUPLE
+#4-) DICTIONARY
+#------------------------------------------------------------------------------
+#1-)Örnek:1 den girilen sayıya kadar olan sayıları bir listeye ekleyen bir uygulama yazınız.
+# kullanici_girisi=int(input("Lütfen bir sayı giriniz:"))
+# sayi_listesi=list()
+# for sayi in range(1,kullanici_girisi+1):
+#     sayi_listesi.append(sayi)  #append:eklemek
+# print(sayi_listesi)
+
+# farklı yöntem:
+# girilen_sayi=int(input("Sayı giriniz:"))
+# liste=[]
+# for i in range(1,girilen_sayi+1):
+#     liste.insert(i-1,i)  #insert metodu:istediğimiz indekse ekleme yapabiliriz.
+# print(liste)
+
+#farklı yöntem:
+
+# giris_sayi=int(input("sayı giriniz:"))
+# liste=[]
+# liste.extend(range(1,giris_sayi+1)) #extend:
+# print(liste)
+
+
+#2) Örnek:İnputtan 2 sayı alınız,ilk girilen sayı.
+# küçük ise artan sırayla;büyük ise azalan sırayla bir liste oluşturunuz.
+
+# sayi1=int(input("1.sayıyı giriniz:"))
+# sayi2=int(input("2.sayıyı giriniz:"))
+# artis_miktari=1
+# if sayi1>sayi2:
+#     artis_miktari-=1
+#     liste = list()
+# for i in range(sayi1,sayi2+artis_miktari,artis_miktari):
+#     liste.append(i)
+# print(liste)
+
+#diğer bir yol:
+# number1=int(input("1.sayıyı giriniz:"))  #1.sayı inputtan istendi.
+# number2=int(input("2.sayıyı giriniz:"))  #2.sayı inputtan istendi.
+# liste=[]     #liste tanımlandı.
+# if number1<number2:    #1. sayısı 2. sayıdan küçük ise:
+#     liste.extend(range(number1,number2 +1)) #listeye extend metodu ile ekle(önce 1.sayı sonra 1.sayı+1)
+# else:                                       #ya da  2.sayı 1.sayıdan büyük ise:
+#     liste.extend(range(number1,number2-1,-1))     #listeye extend metodu ile ekliyoruz.tersten sıralamak için -1 ile yapıyoruz.
+# print(liste)                                      #print ile ekrana yazdırıyoruz.
+
+#3-)Örnek: A'dan Z'ye kadar olan harfleri döngü ile listeye ekleyiniz.
+kucuk_harfler_listesi=[]
+'''
+for i in range(ord("a"),ord("z")+1):
+    kucuk_harfler_listesi.append(chr(i))
+print(kucuk_harfler_listesi)
+
+buyuk_harfler_listesi=[]
+for i in range(ord("A"),ord("Z")+1):
+    buyuk_harfler_listesi.append(chr(i))
+print(buyuk_harfler_listesi)
+
+semboller_listesi=[]
+for i in range(ord("!"),ord("?")+1):
+    semboller_listesi.append(chr(i))
+print(semboller_listesi)
+'''
+
+#4-)ÖRNEK:SAYILAR İSİMLİ BİR LİSTEYE 10 TANE RASTGELE
+# SAYI ÜRETEREK EKLEYİNİZ.ÜRETİLECEK SAYILAR (1-100) ARASINDA OLSUN.
+'''
+import random as rnd    #random sayı üretilecek.
+sayilar=[]              #sayi listesi atandı.
+for i in range(1,11):     # 10 kere döngü olucak.
+    uretilen_sayilar = rnd.randint(1, 100) #10 sayı 1-100 arasından seçiliyor.
+    if sayilar.count(uretilen_sayilar)==0:     #aynı sayı listeye alınmıyor.
+       sayilar.append(uretilen_sayilar)         #sayilar listesine ekleniyor.
+print(sayilar)                               #yazdırılıyor.
+
+'''
+
+#diğer bir yöntem:
+# while yöntemi:
+'''
+index=0      #döngünün durması için durdurma pointi.
+sayilar=[]
+while index <10:                # 10 kere dönücek
+    uretilen_sayilar=rnd.randint(1,100)
+    if sayilar.count(uretilen_sayilar)==0:
+        sayilar.append(uretilen_sayilar)
+        index+=1
+print(sayilar)
+'''
+
+#5-)
+# Müşteriden kaç kolon oynamak istediğini alalım.Sonrasında
+# 1 kolan için 1-49(49) dahil rastgele 6 tane sayı üretilsin ve bir listeye eklesin  ve kçükten büyüğe doğru sıralansın.
+# Her kolan için aynı işlemler yapılsın.
+
+'''
+import random as rnd  #rastgele sayı üretiliyor.
+kolon=int(input("Kaç kolon oynamak istersiniz(4-6):"))  #dışarıdan bilgi alınıyor.
+kolon_listesi=[]                                        #liste tanımlandı.
+sayac=0                                                 #başlangıç değer tanımlandı.
+while sayac<6:    #6 kere için döngü kuruldu.
+    rastgele_sayi_üretilsin=rnd.randint(1,50)   #random sayı üretme
+    if kolon_listesi.count(rastgele_sayi_üretilsin)==0:   #count ile aynı sayı çıkarma
+        kolon_listesi.append(rastgele_sayi_üretilsin)     #append ile listeye ekleme.
+        kolon_listesi.sort()                              #sort metodu ile sıralama.
+    sayac+=1                                              #sayaç arttırılıyor.
+print(kolon_listesi)                                      #print ile yazdırılıyor.
+
+'''
+
+#6-) password generator:
+# password generator:
+# kaç karakterli bir şifre istiyorsunuz ? 6
+# büyük harf istiyor musunuz ? e  [A B C D E ...Z]
+# küçük harf istiyor musunuz ? e  [a b c d ...z]
+# rakam istiyor musunuz ? e [0 1,2....9]
+# sembol istiyor musunuz ? h
+# Ascii table
+'''
+sifre=int(input("kaç karakterli şifre istiyorsunuz:"))
+buyuk_harf_olcak_mi=input("Buyuk harf ister misiniz: e/h")
+kucuk_harf_olcak_mi=input("Kucuk harf ister misiniz : e/h")
+rakam_olcak_mi=input("Rakam istiyor musunuz: e/h")
+sembol_olcak_mi=input("Sembol istiyor musunuz: e/h")
+buyuk_harfler=[]
+kucuk_harfler=[]
+rakam=list(range(0,10))
+sembol=[]
+for i in range(ord("A"),ord("Z")+1):
+    buyuk_harfler.append(chr(i))
+for i in range(ord("a"),ord("z")+1):
+    kucuk_harfler.append(chr(i))
+for i in range(ord("!"),ord("?")+1):
+    sembol.append(chr(i))
+
+import random as rnd
+pasword=[]
+while len(pasword)<sifre:
+    uretilen=rnd.randint(0,3)
+    match uretilen:
+        case 0 :
+            if buyuk_harf_olcak_mi=="e":
+                pasword+= buyuk_harfler[rnd.randint(0,len(buyuk_harfler)-1)]
+        case 1:
+            if kucuk_harf_olcak_mi=="e":
+                pasword+= kucuk_harfler[rnd.randint(0,len(kucuk_harfler)-1)]
+        case 2:
+            if rakam_olcak_mi=="e":
+                pasword+=str(rakam[(rnd.randint(0,len(rakam)-1))])
+        case 3:
+            if sembol_olcak_mi=="e":
+                pasword+= sembol[rnd.randint(0,len(sembol)-1)]
+#print(pasword)
+'''
+
+#Diğer örnekler:
+#mail ayrımı:
+mail_listesi=["nur.ozturk@bilgeadam.com","sema.yılmaz@bilgeadam.com"]
+print("/".join(mail_listesi)) #nur.ozturk@bilgeadam.com/sema.yılmaz@bilgeadam.com
+
+#matematik kütüphanesi için kullanılan:
+#import math
+import math as p1
+pi_sayisi=p1.pi
+print(f"Pi sayısı={pi_sayisi}") #Pi sayısı=3.141592653589793
+e_sayisi=p1.e
+print(f"E sayısı={e_sayisi}")  #E sayısı=2.718281828459045
+#1-) floor(): bir alt tam sayıya tamamlamak.
+print(p1.floor(pi_sayisi)) #3
+print(p1.floor(e_sayisi))  #2
+#2-) ceil():bir üst tamsayıya tamamlamak.
+print(p1.ceil(pi_sayisi)) #4
+print(p1.ceil(e_sayisi))  #3
+#3-) fabs(): mutlak değer alır.
+sayi1=-100
+print(p1.fabs(sayi1)) #100
+#4-) sqrt():karekök alma
+sayi2=81
+print(p1.sqrt(sayi2))  #9.0
+#5-) pow(): üs alma
+a=5
+b=3
+print(p1.pow(a,b)) #125.0
+#fsum():
+rakamlar=[0,1,2,3,4,5,6,7,8,9]
+print(p1.fsum(rakamlar))  #45.0
+
+#DATETİME METOTLARI
+#import datetime as dt
+
+#şimdiki zamanı nasıl hesaplayabiliriz?
+# import datetime as dt                #eğer böyle yazarsak dt.datetime diye çağırmamız gerekir.
+# simdiki_zaman=dt.datetime.now()
+# print(simdiki_zaman)    #2022-11-29 20:29:52.890975
+
+#bugünün zamanını nasıl hesaplarız?
+# from datetime import datetime as dt   #eğer from datetime diye yazarsak datetime'ı çağırmamıza gerek yoktur.
+# bugünün_tarihi=dt.today()
+# print(bugünün_tarihi)   #2022-11-29 20:31:14.958684
+# print(dt.date())        #2022-11-29 20:34:05.733673
+
+#TARİH NASIL OLUŞTURULUR ?
+import datetime as dtm
+bugünün_zamani=dtm.date.today()
+dogum_tarihi=dtm.date(1990,10,10)
+fark=bugünün_zamani-dogum_tarihi
+print(fark)  #11738 days, 0:00:00
+tam_yasi=fark.days/365
+print(round(tam_yasi)) #32  #round yuvarlıyor.
+
+#bizim zaman dilimimiz yani tarih olarak-GÜN-AY-YIL----11-04-1997
+#diğer ülkelerdeki zaman diliminde ise -AY-GÜN-YIL-----04-11-1997
+'''
+%Y:year
+%d:day
+%m:month
+%H:hour
+%M:minute
+%S:second
+'''
+#  STRFTİME: f format (time string olarak formatlıyor) tarihten stringe
+#yani srtftime aslında hesapladığımız şu anki güncel zamanı bize tgün tarih ve yıl cinsinden verir.
+import datetime as dt
+guncel_zaman=dt.datetime.now()
+print(guncel_zaman)  #2022-11-29 23:01:52.350312
+print(guncel_zaman.strftime("%m-%d-%Y")) #11-29-2022
+print(guncel_zaman.strftime("%d-%m-%Y")) #29-11-2022
+
+#STRPTİME: p parse,stringden tarih cinsine
+#strptime da verilen tarihi stringe çeviriyor.
+import datetime as dt
+tarih=dt.datetime.strptime("04.11.1997","%m.%d.%Y")
+print(tarih)  #1997-04-11 00:00:00
+print(tarih.timestamp())  #saniye cinsinden --860706000.0
+
+#custom metotlar:
+'''
+-Custom metotların kullanılmasının sebebi aslında daha complex kodlar için fonskiyon tanımı içinde daha anlaşılır;
+yazabilmek ve sonrada değiştirmek daha kolay olduğu için kullanılabilir.
+-metot tanımlanması-----> def ile yapılır.
+def def_adi():-----> paramaetre/parametresiz-Metot tanımlanması-
+    islemler
+def_adi()    ------> fonskiyon çağrılır.
+# Metotlar çağırılarak çalıştırılırlar.
+# Sıralama önemlidir
+# Önce metot tanımlanacak !
+# Parametreli veya parametresiz metotlar tanımlanabilir.
+# Eğer parametre alıyorsa veri tipinin tanımlaması zorunlu değildir.
+
+KULLANIM ŞEKLİ;
+# metot adı: snake_case notasyonu ile tanımlanır.
+def metot_adi():
+    metodun yapacağı işlemler
+
+-metot=fonksiyon
+-fonksiyon kendi başına tanımlanan bir yapıdır.
+-metot da bir fonksiyondur.
+-Bir classın içinde tanımlanıyorsa metot oluyor.
+-ikiside aynı şeyi yapıyor.
+
+-ÖNCE ÇAĞIR SONRA TANIMLA
+# NOT: ÇOĞU ZAMAN EMİR KİPLERİ ŞEKLİNDE KULLANILIR.
+# bir kez tanım yapıyoruz çoğu kez kullanıyoruz.
+# metot overload yoktur.overload:aynı metot adı ile parametreleri değişicek şekilde birden fazla metot yazılmasıdır.
+# aşırı yükleme yapılmıyor.
+-------------------------------------------------------------------------------------------------
+                             CUSTOM METOTLAR 2'YE AYRILIR.
+    1-)GERİ DEĞER DÖNMEYEN               2-)GERİ DEĞER DÖNEN
+    1.A) PARAMETRESİZ                    2.A) PARAMETRESİZ
+    1.B) PARAMETRELİ                     2.B) PARAMETRELİ   
+---------------------------------------------------------------------------------------------------
+'''
+# 1-) GERİ DEĞER DÖNMEYEN
+# 1.A) PARAMETRESİZ
+# def selamla():      #fonskiyon tanımlandı
+#     print("Hello World!")     #mesaj verildi.
+# selamla()                     # ve fonskiyon çağrıldı.Hello World!
+
+#1.B) PARAMETRELİ
+#metot içine yazılan değerlere parametre konuluyor: bu integeer,string,datetime vb. olabilir.
+
+# def selam_ver(mesaj:str):
+#     print(mesaj)
+# selam_ver("selam güzelim :) ")
+# def toplam(a:int,b:int):
+#     print(f"a+b={a+b}")
+# toplam(3,4)  #a+b=7
+#
+# def ortalama_al(vize:int,final:int):
+#     ortalama=(vize*0.4)+(final*0.6)
+#     print(f"ortalama:{ortalama}")
+# ortalama_al(40,60)  #ortalama:52.0
+#
+# def fark_al(a:int,b:int):
+#     fark=a-b
+#     print(f"a-b={fark}")
+# fark_al(9,2)  #a-b=7
+
+#2-) GERİ DEĞER DÖNEN METOTLAR
+#2.A-) PARAMETRESİZ
+# def topla1():
+#     toplam=4+5
+#     return toplam
+# print(topla1())   #9
+#
+# def us_alma():
+#     us=2*2
+#     return us
+# print(us_alma())  #4
+#
+# def us_alma1():
+#     us1=pow(3,3)
+#     return us1
+# t=us_alma1()
+# print(t)  #27
+
+#2.B-) PARAMETRELİ
+# import math as q
+# def summary(a:int,b:int,c:int):
+#     toplam=a+b+c
+#     return toplam
+# print(summary(7,3,4))   #14
+
+#NOT:CUSTOM METOTLAR :SİSTEMDE OLMAYAN KODLARI DAHA MODÜLER KULLANABİLMEK İÇİN YAZIYORUZ
+#ÖRNEK:
+# float parametre alarak bu sayıların farkını alan ve,
+# gösteren bir metot tanımlayınız.(geri değer dönmeyen)
+# def fark_al(a:float,b:float):
+#     fark=a-b
+#     print(f"a-b={fark}")
+# fark_al(2022,1997) #a-b=25
+# a=float(input("bir sayı giriniz:"))
+# b=float(input("ikinci bir sayı giriniz:"))
+# fark_al(a,b)    #bir sayı giriniz:24
+#                 #ikinci bir sayı giriniz:3
+#                 #a-b=21.0
+
+#programlama dilidinde uyulması gereken 5 psensip vardır.
+#    SOLID: S,O,L,I,D 5 TANE PRENSİP VARDIR.
+#S: SINGLE RESPONSIBILITY: tek sorumluluk prensibidir.yazılan bir kodun(class,method)tek bir amaca hizmet etmesidir
+
+# örnek:
+# def dort_islem_yap(a:int,b:int):
+#     toplam=a+b
+#     fark=a-b
+#     bolum=a/b
+#     carpım=a*b
+#     sonuc={
+#         "toplam":toplam,
+#         "fark":fark,
+#         "bolum":bolum,
+#         "carpim":carpım
+#     }
+#     return sonuc
+# print(dort_islem_yap(10,2))
+
+#aslında yapılması gereken 4 işlem dışında tek tek işlem fonskiyonları oluşturmaktır:
+
+def topla(a:int,b:int):
+    toplam=a+b
+    return toplam
+print(topla(3,4))
+
+def fark_al(a:int,b:int):
+    fark=a-b
+    return fark
+print(fark_al(9,2))
+def bol(a:int,b:int):
+    bolme=a/b
+    if b==0:
+        print("lütfen b değerini değiştiriniz")
+    return bolme
+print(bol(10,5))
+
+def carp(a:int,b:int):
+    carpma=a*b
+    return carpma
+print(carp(2,3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
