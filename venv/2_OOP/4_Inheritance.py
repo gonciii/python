@@ -83,6 +83,7 @@ class Ogrenci(Kisi):
 
 # Base sınıf içinde tanımlanan metodun içinin derived sınıfta doldurulmak zorunda olması
 # için abstract method olarak işaretlenemesi gerekir.
+# decarator örnekleri : @property ve ya @abstract
 from abc import ABC ,abstractmethod
 class GeometrikSekil(ABC): #sınıfı abstract yapmış oluruz.
     @abstractmethod

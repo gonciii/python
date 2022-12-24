@@ -16,7 +16,7 @@ PascalCase--->class adı için kullanılır.
 typeHungarianCase:neyi tanımlıyorsak değişkenin baş harfi gibi bir şey yazıyoruz,tip olarak.
 
 '''
-import datetime
+
 
 
 # class Araba:

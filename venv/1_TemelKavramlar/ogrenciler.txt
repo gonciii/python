@@ -1,3 +1,3 @@
-[{'ad': 'Nur', 'cinsiyet': 'K', 'dogumTarihi': '1980', 'soyad': 'Öztürk'},
- {'ad': 'Gonca', 'cinsiyet': 'K', 'dogumTarihi': '1997', 'soyad': 'Çomak'},
- {'ad': 'Ozan', 'cinsiyet': 'E', 'dogumTarihi': '1990', 'soyad': ',içcan'}]
+[{'ad': 'gonca', 'cinsiyet': 'k', 'dogum_tarihi': '1997', 'soyad': 'çomak'},
+ {'ad': 'gokhan', 'cinsiyet': 'e', 'dogum_tarihi': '1999', 'soyad': 'çomak'},
+ {'ad': 'zeynep', 'cinsiyet': 'k', 'dogum_tarihi': '1996', 'soyad': 'öztürk'}]

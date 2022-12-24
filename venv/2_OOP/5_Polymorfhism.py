@@ -9,7 +9,7 @@ uygulamasını görelim.
 '''
 #ABC:ABSTRACT BASE CLASS
 class Silah(ABC):
-    @abstractmethod
+    @abstractmethod    #bütün silahların ateşleme özelliği var ve soyut bir sınıfmış gibi düşünebiliriz.
     def ates_et(self):
         pass
 class RoketAtarSilah(Silah):
@@ -27,11 +27,17 @@ rpg7=RoketAtarSilah()
 cross_bow=OkAtarSilah()
 #cross_bow.ates_et()
 
-def atesle(silah:Silah):
+def atesle(silah:Silah):          #polymorphism'den yararlanma.oyun içinde nesneyi üretirken silahın tipinden bağımsız olarak silah almıştır ve ateşle
+                                  # metodu ile daha genel bir kod yazarak yapı oluşmuş olur.
     silah.ates_et()
 
-atesle(rpg7)
+atesle(rpg7)            #metod içinede istenilen silah yazılabilirek kopya üretir.
 atesle(cross_bow)
+
+
+# python da birden fazla kalıtım alıyor .
+# java,c# bir tane kalıtım alabilir.
+
 
 
 
