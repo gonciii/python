@@ -187,6 +187,59 @@ print(uye1.durum_goster())
 
 
 
+#masaüstü uygulamaları frameworkleri :PyQT5,tkinter vb
+#web  uygulamaları frameworkleri :Django ,flask vb
+
+# MongoDB  BAŞLANGIÇ:
+
+# veri tabanlarına geçiş : 25 ARALIK
+'''
+2 'ye ayrılıyor :
+1-) İLİŞKİSEL VERİTABANLARI (RDBMS)
+-MsSQL  (kamu kurumları) -windows destekli
+-Oracle (kamu kurumları)
+-MySQL  (açık kaynak kodlu)
+-PostgreSQL VB.  (açık kaynak kodlu) -tübitak desteği var.
+
+server ve management tarafı vardır.
+server da olan veriler yönetilebiliyor.
+managemnt de yönetilmesi gereken alanlar vardır.
+veri bütünlüğü vardır.
+ilişkisel olmayana göre daha yavaş ilerler çünkü ilişki sürecinde birbirine bağımlı bir çok ilişki durumları vardır.
+daha güvenli ve maaliyetli
+finans tarafında kullanılması önerilir.
+
+
+
+veri ilişkisi 
+1:n |
+1:1 | R
+n:n |
+
+2-) İLİŞKİSEL OLMAYAN VERİTABANLARI(NoSQL)
+-MongoDB
+-Redis (key:value şeklinde veri tutar,server üzerinden çalışıyor,cash sistemi kullanılıyor.)
+-Cassandra vb.
+
+hız açısından daha avantajlıdır..
+arkada kontrol eden bir sistem yoktur.
+ilişki yoktur.
+büyük verilerle çalışma konusunda hız avantajı vardır.
+kapladığı olan daha küçüktür.
+açık kaynak kodlu ve maaliyet olarak daha ucuz sistemler.
+
+ölçeklenebilir kavram: 
+dikey büyüme : veri incelemesinde harddisk gibi sistemleri arttırdığında maaliyeti büyüterek dikey büyüme yapılır.
+yatay büyüme :
+property,attribute :özellik
+validation : onaylamak,kontrol
+log kaydı : ?
+
+'''
+
+
+
+
 
 
 
